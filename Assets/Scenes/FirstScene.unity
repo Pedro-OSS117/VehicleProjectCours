@@ -557,7 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interact: 0
   move: {x: 0, y: 0}
-  uIPlayer: {fileID: 0}
 --- !u!136 &2041794408
 CapsuleCollider:
   m_ObjectHideFlags: 0
