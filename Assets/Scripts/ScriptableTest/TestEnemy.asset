@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96e9c3aec76bc149bc064632b71b837, type: 3}
+  m_Name: TestEnemy
+  m_EditorClassIdentifier: 
+  nameEntity: Roger
+  startLife: 50
+  range: 2.88
+  damage: 1
+  debugColor: {r: 0.8679245, g: 0.6912654, b: 0, a: 1}
+  icon: {fileID: 0}
+  _target: {fileID: 11400000, guid: 110a5b347ee54854cb440334ad75beff, type: 2}
+  _targets:
+  - {fileID: 11400000, guid: d0bb62e25d380cb4692da69a86f02842, type: 2}
+  - {fileID: 11400000}
