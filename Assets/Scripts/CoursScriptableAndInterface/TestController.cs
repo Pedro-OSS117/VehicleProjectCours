@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TestController : MonoBehaviour
 {
     [SerializeField] private MyFirstScriptable _data;
 
-
     [SerializeField] private int _life;
+
+    public UnityAction myAction;
+
+    public UnityEvent myEvent;
+
+    private void OnEnable()
+    {
+        Debug.Log("coucou ");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +27,9 @@ public class TestController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    void ApplyAttack(MyFirstScriptable typeEnemy)
+    public void ApplyAttack(MyFirstScriptable typeEnemy)
     {
         if(typeEnemy == _data.Target)
         {

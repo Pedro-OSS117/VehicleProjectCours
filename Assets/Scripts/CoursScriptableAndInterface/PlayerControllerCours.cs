@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerCours : MonoBehaviour
 {
     public bool interact;
     public Vector2 move;
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         OnMyFirstUnityAction += CallMyFunction2;
         OnMySecondUnityAction += CallMyFunction5;
         OnMySecondUnityAction += CallMyFunction6;
+
     }
 
     private void CallMyFunction()

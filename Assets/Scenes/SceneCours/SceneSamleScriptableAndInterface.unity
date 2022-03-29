@@ -219,6 +219,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &205154010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+  m_PrefabInstance: {fileID: 5973013578613253811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9cb3ff48fd88b4486c502e793e46c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &221784919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1056,38 @@ PrefabInstance:
     - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
       propertyPath: debugColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 205154010}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplyAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TestController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 110a5b347ee54854cb440334ad75beff, type: 2}
+    - target: {fileID: 5973013580041422559, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: MyFirstScriptable, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a248a7cf820ddc42933ece65bae8285, type: 3}
