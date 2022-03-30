@@ -10,6 +10,7 @@ public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
     public UnityAction OnInputInteractEvent;
     public UnityAction OnInputInteractEventCanceled;
     public UnityAction<Vector2> OnInputMoveEvent;
+    public UnityAction<Vector2> OnInputLookEvent;
 
     private PlayerInputs _playerInputs;
 
@@ -41,5 +42,10 @@ public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         OnInputMoveEvent?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        OnInputLookEvent?.Invoke(context.ReadValue<Vector2>());
     }
 }
