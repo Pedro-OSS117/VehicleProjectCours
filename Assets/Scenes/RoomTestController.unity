@@ -741,6 +741,7 @@ Transform:
   m_Children:
   - {fileID: 1236318844}
   - {fileID: 1156501195}
+  - {fileID: 2062086041}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -764,9 +765,10 @@ MonoBehaviour:
   _mainCamera: {fileID: 1278362578}
   _cinemachineCameraTarget: {fileID: 1156501194}
   _speedCamera: 200
-  TopClamp: 70
-  BottomClamp: -30
-  CameraAngleOverride: 0
+  _topClamp: 70
+  _bottomClamp: -30
+  _cameraAngleOverride: 0
+  _interactOrigin: {fileID: 2062086040}
 --- !u!143 &1684367737
 CharacterController:
   m_ObjectHideFlags: 0
@@ -959,3 +961,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979885771}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2062086040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062086041}
+  m_Layer: 0
+  m_Name: InteractOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062086041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062086040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.07, z: 0.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1684367735}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

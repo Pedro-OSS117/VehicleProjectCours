@@ -4,16 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class ThirdPersonController : MonoBehaviour
+public class ThirdPersonController : PlayerController
 {
     CharacterController _charaController;
-
-
-    // Input
-    [SerializeField] private InputSystemReader _input;
-    [SerializeField] private bool _interact = false;
-    [SerializeField] private Vector2 _move = Vector2.zero;
-    [SerializeField] private Vector2 _look = Vector2.zero;
 
     // Data
     [Range(0, 10)] [SerializeField] private float _speed = 1;
@@ -38,6 +31,9 @@ public class ThirdPersonController : MonoBehaviour
     // cinemachine
     private float _cinemachineTargetYaw;
     private float _cinemachineTargetPitch;
+
+
+    [SerializeField] private GameObject _interactOrigin;
 
     void Start()
     {
@@ -91,38 +87,12 @@ public class ThirdPersonController : MonoBehaviour
         return Mathf.Clamp(lfAngle, lfMin, lfMax);
     }
 
-    private void InteractPerformed()
+    protected override void InteractPerformed()
     {
-        _interact = true;
-    }
-    private void InteractCanceled()
-    {
-        _interact = false;
-    }
-
-    private void MovePerformed(Vector2 value)
-    {
-        _move = value;
-    }
-
-    private void LookPerformed(Vector2 value)
-    {
-        _look = value;
-    }
-
-    public void OnEnable()
-    {
-        _input.OnInputInteractEvent += InteractPerformed;
-        _input.OnInputInteractEventCanceled += InteractCanceled;
-        _input.OnInputMoveEvent += MovePerformed;
-        _input.OnInputLookEvent += LookPerformed;
-    }
-
-    public void OnDisable()
-    {
-        _input.OnInputInteractEvent -= InteractPerformed;
-        _input.OnInputInteractEventCanceled -= InteractCanceled;
-        _input.OnInputMoveEvent -= MovePerformed;
-        _input.OnInputLookEvent -= LookPerformed;
+        Ray ray = new Ray(_interactOrigin.transform.position, _interactOrigin.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1))
+        {
+            Debug.Log(hit.collider.gameObject.name, hit.collider.gameObject);
+        }
     }
 }
