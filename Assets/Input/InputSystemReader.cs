@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(fileName = "New InputSystemReader", menuName = "VehicleProject/InputReader")]
 public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
 {
-    public UnityAction<bool> OnInteractEvent;
+    public UnityAction OnInputInteractEvent;
+    public UnityAction OnInputInteractEventCanceled;
+    public UnityAction<Vector2> OnInputMoveEvent;
 
     private PlayerInputs _playerInputs;
 
@@ -20,16 +22,24 @@ public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        OnInteractEvent?.Invoke(context.started);
+        switch(context.phase)
+        {
+            case InputActionPhase.Started:
+                OnInputInteractEvent?.Invoke();
+                break;
+            case InputActionPhase.Canceled:
+                OnInputInteractEventCanceled?.Invoke();
+                break;
+        }
     }
 
     public void OnInteract2(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
+        OnInputMoveEvent?.Invoke(context.ReadValue<Vector2>());
     }
 }
