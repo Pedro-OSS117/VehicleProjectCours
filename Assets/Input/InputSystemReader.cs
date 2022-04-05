@@ -9,6 +9,7 @@ public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
 {
     public UnityAction OnInputInteractEvent;
     public UnityAction OnInputInteractEventCanceled;
+    public UnityAction OnInputInteract2Event, OnInputInteract2EventCanceled;
     public UnityAction<Vector2> OnInputMoveEvent;
     public UnityAction<Vector2> OnInputLookEvent;
 
@@ -36,7 +37,15 @@ public class InputSystemReader : ScriptableObject, PlayerInputs.IPlayerActions
 
     public void OnInteract2(InputAction.CallbackContext context)
     {
-        //throw new System.NotImplementedException();
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                OnInputInteract2Event?.Invoke();
+                break;
+            case InputActionPhase.Canceled:
+                OnInputInteract2EventCanceled?.Invoke();
+                break;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
