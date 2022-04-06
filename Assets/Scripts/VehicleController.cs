@@ -29,7 +29,7 @@ public class VehicleController : PlayerController
         SteerVehicle(isFrontSteer ? _wheelFrontColliders : _wheelBackColliders);
         ApplyDrive();
 
-        _wheelFrontColliders[0].attachedRigidbody.AddForce(-transform.up * _downForce);
+        _wheelFrontColliders[0].attachedRigidbody.AddForce(-transform.up * _downForce * _wheelFrontColliders[0].attachedRigidbody.velocity.magnitude);
     }
 
     private void Update()
@@ -68,11 +68,9 @@ public class VehicleController : PlayerController
         {
             currentSpeed = _interact2 ? -_speed : 0;
         }
-        if (currentSpeed != 0)
-        {
-            ApplyDriveOnWheel(_wheelFrontColliders, currentSpeed);
-            ApplyDriveOnWheel(_wheelBackColliders, currentSpeed);
-        }
+
+        ApplyDriveOnWheel(_wheelFrontColliders, currentSpeed);
+        ApplyDriveOnWheel(_wheelBackColliders, currentSpeed);
     }
 
     private void ApplyDriveOnWheel(WheelCollider[] _wheelColliders, float currentSpeed)
